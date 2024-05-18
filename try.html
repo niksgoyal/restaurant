@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Form</title>
+<style>
+select {
+    width: calc(100% - 20px); /* Adjust width */
+    padding: 8px; /* Adjust padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 14px; /* Adjust font size */
+    margin-bottom: 10px;
+}
+
+select, input[type="checkbox"], textarea {
+    width: 100%;
+}
+
+/* Style for the dropdown arrow */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23444444" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+/* Style for the dropdown arrow on hover */
+select:hover {
+    border-color: #007bff;
+}
+
+/* Style for the dropdown arrow when focused */
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Style for the dropdown options */
+select option {
+    background-color: #fff;
+    color: #444;
+}
+
+/* Style for toppings checkboxes */
+input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Style for the toppings container */
+.toppings-container {
+    margin-bottom: 10px;
+}
+
+/* Style for toppings label */
+label {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
+
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select, input[type="checkbox"], textarea {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#cart {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+#cart p {
+    margin: 5px 0;
+}
+
+#totalBill {
+    font-weight: bold;
+    color: #007bff;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Order Form</h2>
+<form id="orderForm" action="#" method="post">
+  <label for="menu">Select Menu Item:</label>
+  <select id="menu" name="menu">
+    <option value="">Select an item</option>
+    <option value="pizza">Pizza</option>
+    <option value="pasta">Pasta</option>
+    <option value="drinks">Drinks</option>
+  </select>
+  <br><br>
+
+  <div id="pizzaOptions" style="display:none;">
+    <label for="crust">Select Crust Type:</label>
+    <select id="crust" name="crust">
+      <option value="">Select crust type</option>
+      <option value="thin">Thin crust</option>
+      <option value="thick">Thick crust</option>
+    </select>
+    <br><br>
+
+    <label for="size">Select Pizza Size:</label>
+    <select id="size" name="size">
+      <option value="">Select size</option>
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+    </select>
+    <br><br>
+
+    <label>Toppings:</label><br>
+    <input type="checkbox" id="topping1" name="topping1" value="pepperoni">
+    <label for="topping1">Pepperoni</label><br>
+    <input type="checkbox" id="topping2" name="topping2" value="mushrooms">
+    <label for="topping2">Mushrooms</label><br>
+    <input type="checkbox" id="topping3" name="topping3" value="onions">
+    <label for="topping3">Onions</label><br>
+    <input type="checkbox" id="topping4" name="topping4" value="sausage">
+    <label for="topping4">Sausage</label><br>
+    <br>
+  </div>
+
+  <div id="pastaOptions" style="display:none;">
+    <label for="sauce">Select Sauce:</label>
+    <select id="sauce" name="sauce">
+      <option value="">Select sauce</option>
+      <option value="marinara">Marinara</option>
+      <option value="alfredo">Alfredo</option>
+    </select>
+    <br><br>
+
+    <label for="pastaType">Select Pasta Type:</label>
+    <select id="pastaType" name="pastaType">
+      <option value="">Select pasta type</option>
+      <option value="spaghetti">Spaghetti</option>
+      <option value="penne">Penne</option>
+    </select>
+    <br><br>
+  </div>
+
+  <div id="drinksOptions" style="display:none;">
+    <label for="drink">Select Drink:</label>
+    <select id="drink" name="drink">
+      <option value="">Select drink</option>
+      <option value="coke">Coke</option>
+      <option value="pepsi">Pepsi</option>
+      <option value="sprite">Sprite</option>
+    </select>
+    <br><br>
+
+    <label for="instructions">Specific Instructions:</label><br>
+    <textarea id="instructions" name="instructions" rows="4" cols="50"></textarea>
+    <br><br>
+  </div>
+
+  <button type="button" id="addToCart">Add to Cart</button>
+</form>
+
+<hr>
+<h2>Cart</h2>
+<div id="cart"></div>
+
+<h2>Total Bill: $<span id="totalBill">0.00</span></h2>
+
+<script>
+    document.getElementById('menu').addEventListener('change', function() {
+      var selectedItem = this.value;
+      var pizzaOptions = document.getElementById('pizzaOptions');
+      var pastaOptions = document.getElementById('pastaOptions');
+      var drinksOptions = document.getElementById('drinksOptions');
+  
+      // Hide all options first
+      pizzaOptions.style.display = 'none';
+      pastaOptions.style.display = 'none';
+      drinksOptions.style.display = 'none';
+  
+      // Show the appropriate options based on the selection
+      if (selectedItem === 'pizza') {
+        pizzaOptions.style.display = 'block';
+      } else if (selectedItem === 'pasta') {
+        pastaOptions.style.display = 'block';
+      } else if (selectedItem === 'drinks') {
+        drinksOptions.style.display = 'block';
+      }
+    });
+  
+    document.getElementById('addToCart').addEventListener('click', function() {
+      var selectedItem = document.getElementById('menu').value;
+      var cart = document.getElementById('cart');
+      var totalBill = document.getElementById('totalBill');
+      var itemCost = 0;
+  
+      if (selectedItem === 'pizza') {
+        var crust = document.getElementById('crust').value;
+        var size = document.getElementById('size').value;
+        var toppings = [];
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        checkboxes.forEach(function(checkbox) {
+          toppings.push(checkbox.value);
+        });
+        var toppingsCost = toppings.length * 0.5; // $0.50 per topping
+        itemCost = 10 + toppingsCost; // Base pizza cost $10
+        var itemDescription = size + ' ' + crust + ' Pizza with ' + toppings.join(', ');
+        cart.innerHTML += '<p>' + itemDescription + ' - $' + itemCost.toFixed(2) + '</p>';
+      } else if (selectedItem === 'pasta') {
+        var sauce = document.getElementById('sauce').value;
+        var pastaType = document.getElementById('pastaType').value;
+        itemCost = 8; // Base pasta cost $8
+        var itemDescription = pastaType + ' Pasta with ' + sauce + ' Sauce';
+        cart.innerHTML += '<p>' + itemDescription + ' - $' + itemCost.toFixed(2) + '</p>';
+      } else if (selectedItem === 'drinks') {
+        var drink = document.getElementById('drink').value;
+        var instructions = document.getElementById('instructions').value;
+        itemCost = 2; // Base drink cost $2
+        var itemDescription = drink + ' - ' + instructions;
+        cart.innerHTML += '<p>' + itemDescription + ' - $' + itemCost.toFixed(2) + '</p>';
+      }
+  
+      var currentTotal = parseFloat(totalBill.innerHTML);
+      totalBill.innerHTML = (currentTotal + itemCost).toFixed(2);
+  
+      // Reset form after adding item to cart
+      document.getElementById('orderForm').reset();
+    });
+  </script>
+  
+
+</body>
+</html>

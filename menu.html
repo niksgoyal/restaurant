@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Restaurant Website</title>
+  </head>
+  <body>
+    
+    
+  
+
+  <section class="section-intro2">
+    <header>
+      <h1>Place Your Order</h1>
+    </header>
+    <div class="link-to-book-wrapper">
+      <a class="link-to-book" href="index.html">Back to Home</a>
+    </div>
+  </section>
+  
+  <section class="menu-section">
+    <h2>Order Form</h2>
+<form id="orderForm" action="#" method="post">
+  <label for="menu">Select Menu Item:</label>
+  <select id="menu" name="menu">
+    <option value="">Select an item</option>
+    <option value="pizza">Pizza</option>
+    <option value="pasta">Pasta</option>
+    <option value="drinks">Drinks</option>
+  </select>
+  <br><br>
+
+  <div id="pizzaOptions" style="display:none;">
+    <label for="crust">Select Crust Type:</label>
+    <select id="crust" name="crust">
+      <option value="">Select crust type</option>
+      <option value="Neapolitana">Neapolitana</option>
+      <option value="Chicago Deep Dish">Chicago Deep Dish</option>
+      <option value="Pan Crust">Pan Crust</option>
+      <option value="New York Style">New York Style</option>
+      <option value="Vegan and Gluten Free">Vegan and Gluten Free</option>
+    </select>
+    <br><br>
+
+    <label for="size">Select Pizza Size:</label>
+    <select id="size" name="size">
+      <option value="">Select size</option>
+      <option value="Small">Small (7 inches)</option>
+      <option value="Medium">Medium (9 inches)</option>
+      <option value="Large">Large (12 inches)</option>
+      <option value="Extra Large">Extra Large (15 inches)</option>
+    </select>
+    <br><br>
+
+    <label>Toppings:</label><br>
+    <input type="checkbox" id="topping1" name="topping1" value="Pepperoni">
+    <label for="topping1">Pepperoni</label><br>
+    <input type="checkbox" id="topping2" name="topping2" value="Mushrooms">
+    <label for="topping2">Mushrooms</label><br>
+    <input type="checkbox" id="topping3" name="topping3" value="Onions">
+    <label for="topping3">Onions</label><br>
+    <input type="checkbox" id="topping4" name="topping4" value="Sausage">
+    <label for="topping4">Sausage</label><br>
+    <input type="checkbox" id="topping5" name="topping5" value="Peppers">
+    <label for="topping5">Peppers</label><br>
+    <input type="checkbox" id="topping6" name="topping6" value="Jalapenos">
+    <label for="topping6">Jalapenos</label><br>
+    <br>
+  </div>
+
+  <div id="pastaOptions" style="display:none;">
+    <label for="sauce">Select Sauce:</label>
+    <select id="sauce" name="sauce">
+      <option value="">Select sauce</option>
+      <option value="Marinara">Marinara</option>
+      <option value="Alfredo">Alfredo</option>
+      <option value="Pesto">Pesto</option>
+      <option value="Aglio e Olio">Aglio e Olio</option>
+      <option value="Carbonara">Carbonara</option>
+    </select>
+    <br><br>
+
+    <label for="pastaType">Select Pasta Type:</label>
+    <select id="pastaType" name="pastaType">
+      <option value="">Select pasta type</option>
+      <option value="Spaghetti">Spaghetti</option>
+      <option value="Penne">Penne</option>
+      <option value="Fusili">Fusili</option>
+      <option value="Fettucine">Fettucine</option>
+      <option value="Ravioli">Ravioli</option>
+    </select>
+    <br><br>
+
+    <label>Toppings:</label><br>
+    <input type="checkbox" id="topping1" name="topping1" value="Extra Parmesan">
+    <label for="topping1">Extra Parmesan</label><br>
+    <input type="checkbox" id="topping2" name="topping2" value="Mushrooms">
+    <label for="topping2">Mushrooms</label><br>
+    <input type="checkbox" id="topping3" name="topping3" value="Onions">
+    <label for="topping3">Onions</label><br>
+    <input type="checkbox" id="topping4" name="topping4" value="Sausage">
+    <label for="topping4">Sausage</label><br>
+    <input type="checkbox" id="topping5" name="topping5" value="Egg Yolk">
+    <label for="topping5">Egg Yolk</label><br>
+    <input type="checkbox" id="topping6" name="topping6" value="Jalapenos">
+    <label for="topping6">Jalapenos</label><br>
+    <br>
+  </div>
+
+  <div id="drinksOptions" style="display:none;">
+    <label for="drink">Select Drink:</label>
+    <select id="drink" name="drink">
+      <option value="">Select drink</option>
+      <option value="Mint Mojito">Mint Mojito</option>
+      <option value="Blue Curacao">Blue Curacao</option>
+      <option value="Watermelon Punch">Watermelon Punch</option>
+      <option value="Iced Coffee">Iced Coffee</option>
+      <option value="Berry Burst">Berry Burst</option>
+    </select>
+    <br><br>
+
+    <label for="instructions">Specific Instructions:</label><br>
+    <textarea id="instructions" name="instructions" rows="4" cols="50"></textarea>
+    <br><br>
+  </div>
+
+  <button type="button" id="addToCart">Add to Cart</button>
+</form>
+
+<hr>
+<h2>Cart</h2>
+<div id="cart"></div>
+
+<h2>Total Bill: Rs.<span id="totalBill">0.00</span></h2>
+<button id="placeOrderBtn" onclick="placorder()">Place Order</button>
+<br>
+<hr>
+  </section>
+
+  <div id="xtraimg" class="xtraimg">
+    
+    <img src="food2.jpg" class="d-block w-100" alt="food">
+  
+</div>
+
+  <div class="container">
+    <div class="row-flex">
+      
+      <div class="opening-time">
+        <h3>
+          Opening times
+        </h3>
+        <p>
+         <span>Monday—Thursday: 08:00 — 22:00</span> 
+         <span>Friday—Saturday: 09:00 — 23:00 </span>
+         <span>Sunday: 10:00 — 17:00</span>
+        </p>
+      </div>
+      <div class="contact-adress">
+        <h3>
+          Contact
+        </h3>
+        <p>
+          <span>999 999 9999</span>
+          <span>Ambedkar Marg</span>
+          <span>C-Scheme, 302001 Jaipur</span>
+        </p>
+      </div>
+    </div>
+    </div>
+
+
+
+    <script>
+        function placorder(){
+            alert("Your Order Has Been Placed Successfully");
+            
+          }
+      
+        document.getElementById('menu').addEventListener('change', function() {
+          var selectedItem = this.value;
+          var pizzaOptions = document.getElementById('pizzaOptions');
+          var pastaOptions = document.getElementById('pastaOptions');
+          var drinksOptions = document.getElementById('drinksOptions');
+      
+          pizzaOptions.style.display = 'none';
+          pastaOptions.style.display = 'none';
+          drinksOptions.style.display = 'none';
+      
+          if (selectedItem === 'pizza') {
+            pizzaOptions.style.display = 'block';
+          } else if (selectedItem === 'pasta') {
+            pastaOptions.style.display = 'block';
+          } else if (selectedItem === 'drinks') {
+            drinksOptions.style.display = 'block';
+          }
+        });
+      
+        document.getElementById('addToCart').addEventListener('click', function() {
+          var selectedItem = document.getElementById('menu').value;
+          var cart = document.getElementById('cart');
+          var totalBill = document.getElementById('totalBill');
+          var itemCost = 0;
+      
+          if (selectedItem === 'pizza') {
+            var crust = document.getElementById('crust').value;
+            var size = document.getElementById('size').value;
+            var toppings = [];
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            checkboxes.forEach(function(checkbox) {
+              toppings.push(checkbox.value);
+            });
+            var toppingsCost = toppings.length * 79;
+            itemCost = 545 + toppingsCost;
+            var itemDescription = size + ' ' + crust + ' Pizza with ' + toppings.join(', ');
+            cart.innerHTML += '<p>' + itemDescription + ' - Rs.' + itemCost.toFixed(2) + '</p>';
+          } else if (selectedItem === 'pasta') {
+            var sauce = document.getElementById('sauce').value;
+            var pastaType = document.getElementById('pastaType').value;
+            var toppings = [];
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            checkboxes.forEach(function(checkbox) {
+              toppings.push(checkbox.value);
+            });
+            var toppingsCost = toppings.length * 59;
+            itemCost = 499 + toppingsCost;
+            var itemDescription = pastaType + ' Pasta with ' + sauce + ' Sauce';
+            cart.innerHTML += '<p>' + itemDescription + ' - Rs.' + itemCost.toFixed(2) + '</p>';
+          } else if (selectedItem === 'drinks') {
+            var drink = document.getElementById('drink').value;
+            var instructions = document.getElementById('instructions').value;
+            itemCost = 219;
+            var itemDescription = drink + ' - ' + instructions;
+            cart.innerHTML += '<p>' + itemDescription + ' - Rs.' + itemCost.toFixed(2) + '</p>';
+          }
+      
+          var currentTotal = parseFloat(totalBill.innerHTML);
+          totalBill.innerHTML = (currentTotal + itemCost).toFixed(2);
+          
+          document.getElementById('orderForm').reset();
+          
+        });
+      </script>
+      
+  
+  
+  </body>
+  
+</html> 
